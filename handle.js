@@ -26,7 +26,7 @@ export function handleResponse(res, elapsed, now, startAt, config) {
 
     if (msg.includes("unable") || msg.includes("purchase") || msg.includes("no")) {
       console.log(`[${now()}] [info] [${elapsed}s] Server gave response empty stock.`);
-      return { action: "retry", delay: 2000 };
+      return { action: "retry", delay: 3000 };
     }
   }
   
