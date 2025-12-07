@@ -16,7 +16,7 @@ export function handleResponse(res, elapsed, now, startAt, config) {
   }
 
   // ===== 2108 handler =====
-  if (res.resultCode === 2108) {
+  if (res.resultCode === 2109) {
     const msg = (res.resultDesc || res.resultMsg || "").toLowerCase();
 
     if (msg.includes("request") || msg.includes("frequently") || msg.includes("try")) {
