@@ -68,7 +68,7 @@ export async function redeemCode(session) {
     bizType: "0",
     goodsOptionsTypeValueJson: JSON.stringify({
       rom_version: config.rom_version,
-      idc_code: config.idc_code,
+      idc_code: config.idc_code
     }),
   };
 
