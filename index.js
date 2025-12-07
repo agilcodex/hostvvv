@@ -24,7 +24,7 @@ const now = () => new Date().toLocaleTimeString("id-ID", { hour12: false });
 
   while (true) {
     const res = await redeemCode(session);
-    const elapsed = ((Date.now() - scriptStart) / 4000).toFixed(2);
+    const elapsed = ((Date.now() - scriptStart) / 6000).toFixed(2);
 
     const action = handleResponse(res, elapsed, now, startAt, config);
 
