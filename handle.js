@@ -12,21 +12,21 @@ export function handleResponse(res, elapsed, now, startAt, config) {
 
   if (!res) {
     console.log(`[${now()}] [info] [${elapsed}s] Tidak ada response, retry...`);
-    return { action: "retry", delay: 10000 };
+    return { action: "retry", delay: 3000 };
   }
 
   // ===== 2108 handler =====
-  if (res.resultCode === 2108) {
+  if (res.resultCode === 2109) {
     const msg = (res.resultDesc || res.resultMsg || "").toLowerCase();
 
     if (msg.includes("request") || msg.includes("frequently") || msg.includes("try")) {
       console.log(`[${now()}] [info] [${elapsed}s] Server gave response Limit frequent.`);
-      return { action: "retry", delay: 2000 };
+      return { action: "retry", delay: 7000 };
     }
 
     if (msg.includes("unable") || msg.includes("purchase") || msg.includes("no")) {
       console.log(`[${now()}] [info] [${elapsed}s] Server gave response empty stock.`);
-      return { action: "retry", delay: 3000 };
+      return { action: "retry", delay: 7000 };
     }
   }
   
