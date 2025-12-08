@@ -21,12 +21,12 @@ export function handleResponse(res, elapsed, now, startAt, config) {
 
     if (msg.includes("request") || msg.includes("frequently") || msg.includes("try")) {
       console.log(`[${now()}] [info] [${elapsed}s] Server gave response Limit frequent.`);
-      return { action: "retry", delay: 11000 };
+      return { action: "retry", delay: 2000 };
     }
 
     if (msg.includes("unable") || msg.includes("purchase") || msg.includes("no")) {
       console.log(`[${now()}] [info] [${elapsed}s] Server gave response empty stock.`);
-      return { action: "retry", delay: 9000 };
+      return { action: "retry", delay: 3000 };
     }
   }
   
